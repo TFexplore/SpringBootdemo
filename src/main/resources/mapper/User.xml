@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.Dao.UserDao" >
+    <resultMap id="UserMap" type="com.example.demo.bean.User">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="getUserById" resultMap="UserMap">
+    select * from user where id= #{id}
+    </select>
+    <select id="findUserByName" resultMap="UserMap">
+        select * from user where name= #{name}
+    </select>
+    <select id="queryAll" resultMap="UserMap">
+        select * from user
+    </select>
+    <select id="addUser" >
+    insert into user(id,name ,email,role,password) value(#{id},#{name},#{email},#{role},#{password})
+    </select>
+    <select id="deleteUser" >
+    delete from user where id = #{id}
+    </select>
+    <select id="updateUser" >
+    update user set name=#{name},email=#{email},role=#{role},password=#{password} where id=#{id}
+    </select>
+
+</mapper>
