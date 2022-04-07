@@ -1,6 +1,6 @@
-package com.example.demo.config;
-import com.example.demo.Dao.UserDao;
-import com.example.demo.Service.UserService;
+package com.example.demo.Securityconfig;
+
+
 import com.example.demo.Service.impl.UserServiceImpl;
 import com.example.demo.bean.User;
 import org.apache.commons.logging.Log;

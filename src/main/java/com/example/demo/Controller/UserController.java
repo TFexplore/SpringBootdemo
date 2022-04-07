@@ -2,7 +2,10 @@ package com.example.demo.Controller;
 
 import com.example.demo.Service.impl.UserServiceImpl;
 import com.example.demo.bean.User;
-import com.example.demo.config.HashPasswordEncoder;
+import com.example.demo.Securityconfig.HashPasswordEncoder;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.annotation.Resource;
 
 @Controller
+@Api
 public class UserController {
 
     @Resource
@@ -19,6 +23,9 @@ public class UserController {
     HashPasswordEncoder encoder;
 
     @PostMapping("tologin")
+    //说明是什么方法(可以理解为方法注释)
+    @ApiOperation(value = "登录", notes = "登录")
+    @ApiImplicitParam(name = "username", value = "string", required = true, dataType = "String", paramType = "query")
     public String login(@RequestParam("username") String username,
                         @RequestParam("password") String password,
                         Model model) {

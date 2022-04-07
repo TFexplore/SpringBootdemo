@@ -3,7 +3,7 @@ package com.example.demo.Service.impl;
 import com.example.demo.Dao.UserDao;
 import com.example.demo.Service.UserService;
 import com.example.demo.bean.User;
-import com.example.demo.config.HashPasswordEncoder;
+import com.example.demo.Securityconfig.HashPasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
